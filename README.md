@@ -31,13 +31,16 @@ Designed a structured directory using Role-Based Access Control (RBAC) principle
 | sheheryar.admin | Domain Administrator | Administrative and elevated tasks |
 | john.smith | Standard User | Simulated end user / helpdesk target |
 
-###Service Desk operations practiced:
+### Service Desk operations practiced:
 - Created new user accounts with correct OU placements and group membership
 - Enforced password change on next logon for new hire simulation
 - Simulated and resolved account lockouts from repeated failed login attempts
 - Disabled terminated employee accounts, revoking their access whilst preserving the SID and profile data
 
-Screenshot:
+<img width="543" height="298" alt="image" src="https://github.com/user-attachments/assets/3d71a52e-9d2a-49a7-9ff7-6ff78d54e523" />
+Staff OU in ADUC
+
+
 
 ---
 
@@ -48,19 +51,20 @@ Screenshot:
 - Successfully authenticated and joined CLIENT01 to 'sheheryarlab.local'
 - Veriifed domain membership via System Properties
 
-Screenshot:
+<img width="410" height="469" alt="image" src="https://github.com/user-attachments/assets/2f21aafa-4110-4061-982c-5beeb046ee3f" />
 
 ---
 
 ### 3. Group Policy (GPO) Enforcement:
 - Created GPO: 'Block_Control_Panel'
-- Linnked exclusively to the 'Staff' OU (scoped to standard users for testing)
+- Linked exclusively to the 'Staff' OU (scoped to standard users for testing)
 - Forced immediate client-side policy application via 'gpupdate /force'
 - Verified enforcement: standard user (john.smith) blocked from Control Panel
-- Verified admin exemption: sheheryar.admin retains full access
+- Verified admin exemption: sheheryar.admin retains full access by creating an OU for IT Department.
 - Ran 'gpresult /r' to confirm correct GPO application and inheritance
 
-Screenshot:
+<img width="591" height="155" alt="image" src="https://github.com/user-attachments/assets/00916d11-e4e4-458b-8422-6442e402ae52" />
+
 
 ---
 
