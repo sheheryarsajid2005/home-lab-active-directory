@@ -76,6 +76,29 @@ Staff OU in ADUC
 
 ---
 
+### 5. GPO Lab - Additional Policies (From Roadmap)
+**Password Policy (Default Common Policy)**
+- Minimum password length: 10 characters
+- Maximum password age: 90 days
+- Enforce password history: 10 passwords
+- Complexity requirements: Enabled
+- Account lockout threshold: 5 attempts
+- Lockout duration: 30 minutes
+
+**Restrict_CMD GPO**
+- Linked to Sheheryars_Staff OU
+- Prevents standard users from accessing Command Prompt
+- Verified on CLIENT01 logged in as test user.
+<img width="980" height="529" alt="image" src="https://github.com/user-attachments/assets/12c5fef8-5176-46b0-a4f4-5b871c814590" />
+
+**Map_Staff_Drive GPO**
+- Linked to Sheheryars_Staff OU
+- Automatically maps S:drive (Staff Share) on user login
+- Share hosted on DC01 at \\DC01\StaffShare
+- Verified, S:drive visible under Network Locations on CLIENT01
+<img width="808" height="577" alt="image" src="https://github.com/user-attachments/assets/eccd3f3a-8e09-43f4-9b6a-f3c6da5f2461" />
+
+
 ## Troubleshooting & Problem-solving
 Real issues encountered and resolved during the build. Documenting these because problem-solving under ambiguity is a core service desk skill.
 
@@ -123,7 +146,7 @@ Built independently to develop practical IT infrastructure skills ahead of junio
 
 ## Roadmap
 - Install RSAT on CLIENT01 for remote domain management without logging into the server.
-- Additional GPUs: Password complexity policy, CMD restriction, mapped network drives, wallpaper enforcement
+- [X] Additional GPUs: Password complexity policy, CMD restriction, mapped network drives, wallpaper enforcement
 - Wireshark traffic capture. Analyse DNS queries and RDP packets between VMs.
 - Shared folder with NTFS permission scoped to security groups.
 - Microsoft Entra ID and Exchange Online. Cloud identity management theory and administration.
